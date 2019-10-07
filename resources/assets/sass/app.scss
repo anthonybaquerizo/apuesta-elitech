@@ -1,0 +1,45 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+$colorActive: #008200;
+$colorText: #c3c3c3; 
+$colorCard: #313131;
+
+body {
+    background: #101010;
+    color: $colorText;
+}
+
+.navbar {
+    border-bottom: .2rem solid $colorActive;
+}
+
+.nav-item.active {
+    background-color: $colorActive;
+}
+
+.card {
+    background-color: $colorCard;
+}
+
+.card-header {
+    padding: .15rem .25rem;
+}
+
+.card-header h3 {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.card-header i.fa {
+    font-size: .8rem;
+}
