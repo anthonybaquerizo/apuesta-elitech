@@ -1,28 +1,28 @@
 import moment from 'moment'
 
 export default {
+    name: 'help',
     data () {
         return {
-            alert: {
-                type: '',
-                title: '',
-                messages: []
-            },
             loading: false
         }  
-    },
-    components: {
-        
     },
     created () {
         moment.locale('es')
     },
     filters: {
         date (value) {
-            return moment(value, 'YYYY-MM-DD HH:ii:ss').fromNow()
+            return moment(value, 'YYYY-MM-DD HH:mm:ss').fromNow()
+        },
+        dateHuman (value) {
+            return moment(value, 'YYYY-MM-DD HH:mm:ss').format('DD MMM YYYY HH:mm A').toString().toUpperCase()
         }
     },
     methods: {
+        /**
+         * Captura el error y devuelve los errores
+         * @param {*} param0 
+         */
         catchError ({ status, data }) {
             var response = [];
             switch(status) 
@@ -44,6 +44,9 @@ export default {
             }
             return response
         },
+        /**
+         * Cierra la alerta en 5seg
+         */
         closeAlert () {
             setTimeout(function() {
                 this.alert.messages = []

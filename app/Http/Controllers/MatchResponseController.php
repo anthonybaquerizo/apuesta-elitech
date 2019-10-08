@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Model\MatchResponse;
 use App\Model\MatchDay;
 use Exception;
+use App\User;
 
 class MatchResponseController extends Controller
 {
@@ -23,9 +24,9 @@ class MatchResponseController extends Controller
     /**
      * Devuelve los partidos jugados por el usuario
      */
-    public function getResponses()
+    public function getResponses(Request $request)
     {
-        return Auth::user()->matchResponses;
+        return Auth::user()->matchResponses->where('match_day.name', 'like', $request->q);
     }
 
     /**

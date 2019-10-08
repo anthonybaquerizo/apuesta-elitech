@@ -23,10 +23,9 @@ window.axios = require('axios')
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var origin = window.location.origin;
-if (origin == 'http://elitechsudamerica.com' || origin == 'https://elitechsudamerica.com' || origin == 'http://www.elitechsudamerica.com' || origin == 'https://www.elitechsudamerica.com') {
+if (origin !== 'http://localhost:8000') {
     origin += '/apuestas/'
 }
-console.log(origin);
 window.axios.defaults.baseURL = origin;
 window.axios.interceptors.response.use(null, (error) => {
     // Sirve para poder capturar los errores de respuesta del servidor

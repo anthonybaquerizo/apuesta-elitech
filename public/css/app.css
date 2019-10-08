@@ -10662,15 +10662,32 @@ body {
 }
 
 .card-header {
-  padding: 0.15rem 0.25rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(249, 247, 247, 0.125);
 }
 
 .card-header h3 {
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .card-header i.fa {
-  font-size: 0.8rem;
+  font-size: 1rem;
+}
+
+.card-body {
+  padding: 1rem 0.5rem;
+}
+
+.card-footer {
+  border-top: 1px solid rgba(249, 247, 247, 0.125);
+}
+
+.table {
+  color: #c3c3c3;
+}
+
+.table-hover tbody tr:hover {
+  color: #fff;
 }
 
